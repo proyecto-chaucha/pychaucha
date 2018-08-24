@@ -4,10 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
 bitcoin = "*"
 
 [dev-packages]
+"flake8" = "*"
+"flake8-import-order" = "*"
+pytest = "*"
+the = "*"
+mypy-lang = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
