@@ -11,7 +11,7 @@ bitcoin = "*"
 "flake8-import-order" = "*"
 pytest = "*"
 the = "*"
-mypy-lang = "*"
+mypy = "*"
 
 [requires]
 python_version = "3.7"

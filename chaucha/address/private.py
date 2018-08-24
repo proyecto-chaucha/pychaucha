@@ -4,10 +4,9 @@ Holds the Private key logic for Addresses
 """
 import bitcoin
 
+from chaucha import magicbytes
 from .key import Key
 from .public import Public
-
-from chaucha import magicbytes
 
 
 class Private(Key):
@@ -22,10 +21,10 @@ class Private(Key):
         :return: Private key class object
         """
         key = bitcoin.sha256(
-                bitcoin.sha256(
-                    bitcoin.random_key()
-                )
+            bitcoin.sha256(
+                bitcoin.random_key()
             )
+        )
         return cls(key)
 
     @classmethod
