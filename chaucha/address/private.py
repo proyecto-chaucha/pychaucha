@@ -15,7 +15,7 @@ class Private(Key):
         pass
 
     def get_public(self):
-        return Public(bitcoin.privtoaddr(self.key, constants.default))
+        return Public(bitcoin.privtoaddr(self.key, constants.magicbytes.C_BYTE))
 
     @classmethod
     def init_from_key(cls: 'Private', key: str) -> 'Private':
