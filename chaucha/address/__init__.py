@@ -20,7 +20,7 @@ class Address(object):
         :return: Address class object
         """
         _private = Private.init_random()
-        _public = private.get_public()
+        _public = _private.get_public()
         return cls(_public, _private)
 
     @classmethod
@@ -31,7 +31,7 @@ class Address(object):
         :return: Address class object
         """
         _private = Private.init_from_seed(seed)
-        _public = private.get_public()
+        _public = _private.get_public()
         return cls(_public, _private)
 
     @classmethod
@@ -43,5 +43,5 @@ class Address(object):
         :return: Address class object
         """
         _private = Private.init_from_seed_simple(seed)
-        _public = private.get_public()
+        _public = _private.get_public()
         return cls(_public, _private)
