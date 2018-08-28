@@ -18,17 +18,10 @@ class Private(Key):
         return Public(bitcoin.privtoaddr(self.key, magicbytes.default))
 
     @classmethod
-    def init_random(cls: 'Private') -> 'Private':
-        """
-        Randomly creates a secure private key
-        :return: Private key class object
-        """
-        return cls.init_from_seed(bitcoin.random_key())
-
-    @classmethod
     def init_from_key(cls: 'Private', key: str) -> 'Private':
         """
-        Creates a private key instance from already defined WIF key
+        Creates a private key instance from already defined WIF key.
+        Is the default init method.
         :param key: string with a WIF
         :return: Private Key class object
         """
@@ -60,3 +53,11 @@ class Private(Key):
         key = bitcoin.sha256(seed)
 
         return cls(key)
+
+    @classmethod
+    def init_random(cls: 'Private') -> 'Private':
+        """
+        Randomly creates a secure private key
+        :return: Private key class object
+        """
+        return cls.init_from_seed(bitcoin.random_key())
