@@ -19,18 +19,29 @@ class Address(object):
         Randomly creates a secure private and public key
         :return: Address class object
         """
-        private = Private.init_random()
-        public = private.get_public()
-        return cls(public, private)
+        _private = Private.init_random()
+        _public = private.get_public()
+        return cls(_public, _private)
 
     @classmethod
-    def init_from_seed(cls: 'Address', seed: str, once: bool=False) -> 'Address':
+    def init_from_seed(cls: 'Address', seed: str) -> 'Address':
         """
         Creates a private and public key from a defined seed
         :param seed: string with the contents for key creation
-        :param once: apply just one sha256 function (not recommended)
         :return: Address class object
         """
-        private = Private.init_from_seed(seed, once)
-        public = private.get_public()
-        return cls(public, private)
+        _private = Private.init_from_seed(seed)
+        _public = private.get_public()
+        return cls(_public, _private)
+
+    @classmethod
+    def init_from_seed_simple(cls: 'Address', seed: str) -> 'Address':
+        """
+        Creates a private and public key from a defined seed.
+        Applies just one sha256 function to the seed (not recommended).
+        :param seed: string with the contents for key creation
+        :return: Address class object
+        """
+        _private = Private.init_from_seed_simple(seed)
+        _public = private.get_public()
+        return cls(_public, _private)

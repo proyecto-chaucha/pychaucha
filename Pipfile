@@ -9,9 +9,9 @@ bitcoin = "*"
 [dev-packages]
 "flake8" = "*"
 "flake8-import-order" = "*"
-pytest = "*"
 the = "*"
 mypy = "*"
+green = "*"
 
 [requires]
 python_version = "3.7"

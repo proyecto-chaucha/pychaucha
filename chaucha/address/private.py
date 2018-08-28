@@ -10,6 +10,9 @@ from .public import Public
 
 
 class Private(Key):
+    # TODO: Implement validation function to private keys
+    def is_valid(self):
+        pass
 
     def get_public(self):
         return Public(bitcoin.privtoaddr(self.key, magicbytes.default))
@@ -20,19 +23,13 @@ class Private(Key):
         Randomly creates a secure private key
         :return: Private key class object
         """
-        key = bitcoin.sha256(
-            bitcoin.sha256(
-                bitcoin.random_key()
-            )
-        )
-        return cls(key)
+        return cls.init_from_seed(bitcoin.random_key())
 
     @classmethod
-    def init_from_seed(cls: 'Private', seed: str, once: bool=False) -> 'Private':
+    def init_from_seed(cls: 'Private', seed: str) -> 'Private':
         """
         Creates a private key from a defined seed
         :param seed: string with the contents for key creation
-        :param once: apply just one sha256 function (not recommended)
         :return: Private Key class object
         """
         key = bitcoin.sha256(
@@ -41,7 +38,16 @@ class Private(Key):
             )
         )
 
-        if once:
-            key = bitcoin.sha256(seed)
+        return cls(key)
+
+    @classmethod
+    def init_from_seed_simple(cls: 'Private', seed: str) -> 'Private':
+        """
+        Creates a private key from a defined seed.
+        Applies just one sha256 function to the seed (Not recommended).
+        :param seed: string with the contents for key creation
+        :return: Private Key class object
+        """
+        key = bitcoin.sha256(seed)
 
         return cls(key)
