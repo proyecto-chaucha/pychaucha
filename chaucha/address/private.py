@@ -26,6 +26,15 @@ class Private(Key):
         return cls.init_from_seed(bitcoin.random_key())
 
     @classmethod
+    def init_from_key(cls: 'Private', key: str) -> 'Private':
+        """
+        Creates a private key instance from already defined WIF key
+        :param key: string with a WIF
+        :return: Private Key class object
+        """
+        return cls(key)
+
+    @classmethod
     def init_from_seed(cls: 'Private', seed: str) -> 'Private':
         """
         Creates a private key from a defined seed
