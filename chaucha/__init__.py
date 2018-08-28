@@ -3,7 +3,7 @@
 from .constants import coin, magicbytes, network
 
 magicbyte = magicbytes.C_BYTE
-minfee = network.MINIMUM_FEE
+minfee = network.FEE_MINIMUM
 chatoshi = coin.CHATOSHI
 
 name = 'chaucha'

@@ -3,5 +3,7 @@
 Holds the Chaucha Network Values
 """
 
-# Minimum transaction fee
-MINIMUM_FEE = 0.001
+# Transaction fees
+FEE_MINIMUM = 0.001
+FEE_BASE = 0.000452
+FEE_PER_INPUT = 0.000296
