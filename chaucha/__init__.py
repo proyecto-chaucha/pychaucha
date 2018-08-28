@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from .constants import magicbytes
 from . import network
+from .constants import magicbytes
 
 magicbyte = magicbytes.C_BYTE
 minfee = network.fee

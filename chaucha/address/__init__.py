@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from .private import Private
-from .public import Public
 
 
 class Address(object):

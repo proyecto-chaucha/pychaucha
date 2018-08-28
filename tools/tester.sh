@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-pytest ./tests
+python -m green ./tests
