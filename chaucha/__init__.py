@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from . import magicbytes
+from .constants import magicbytes
 from . import network
 
-magicbyte = magicbytes.default
+magicbyte = magicbytes.C_BYTE
 minfee = network.fee
 satoshi = network.chatoshi
 

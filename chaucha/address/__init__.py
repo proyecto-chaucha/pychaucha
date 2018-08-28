@@ -9,7 +9,7 @@ class Address(object):
     public = None
     private = None
 
-    def __init__(self, _public: Public, _private: Private):
+    def __init__(self, _public: 'Public', _private: 'Private'):
         self.public = _public
         self.private = _private
 
