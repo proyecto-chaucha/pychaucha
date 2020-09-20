@@ -10,6 +10,7 @@ from bitcoin import mktx, mksend, sign
 # e.g.
 # echo 486f6c61204d756e646f | xxd -p -r
 
+# Max number of chars in OP_RETURN
 MAX = 255
 
 
@@ -86,8 +87,8 @@ def send(privkey, pubkey, sendto, message="", force=False):
     # FEE = 0.01 CHA/kb
     # MAX FEE = 0.1 CHA
 
-    fee = int((size / 1024) * constants.FEE_RECOMMENDED * constants.COIN)
-    fee = 1e7 if fee > 1e7 else fee
+    fee = int((size / constants.KYLOBYTE) * constants.FEE_RECOMMENDED * constants.COIN)
+    fee = constants.FEE_MAX if fee > constants.FEE_MAX else fee
 
     if used_balance == confirmed_balance:
         outputs[0] = {"address": sendto, "value": used_amount - fee}

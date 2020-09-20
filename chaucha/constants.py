@@ -1,8 +1,12 @@
+# General
+KYLOBYTE = 1024
+DIGITS58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+
+# Chaucha
 INSIGHT_ENDPOINT = "https://explorer.cha.terahash.cl"
 
 CHAUCHA_PUBKEY_ADDRESS = 58
 CHAUCHA_SECRETKEY = "d8"
-DIGITS58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
 # Minimum unit 10^-8 CHA
 # Included other alternate versions
