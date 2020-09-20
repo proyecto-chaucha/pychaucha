@@ -110,9 +110,6 @@ def pubkey_is_valid(addr):
 
 
 def uid(length=32):
-    entropy = (
-        str(random.randrange(2 ** 256))
-        + str(int(time.time() * 1000000))
-    )
+    entropy = str(random.randrange(2 ** 256)) + str(int(time.time() * 1000000))
 
     return sha3_hex(str(uuid.uuid4()) + secrets.token_hex(length) + entropy)

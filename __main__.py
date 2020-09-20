@@ -15,4 +15,4 @@ if __name__ == "__main__":
     pubkey = getenv("PUBLIC_KEY")
     sendto = getenv("SEND_TO_PUBLIC_KEY")
 
-    print(opreturn.send(privkey, pubkey, sendto, message="Hola Mundo, Hello World"))
+    print(opreturn.send(privkey, pubkey, sendto, message="Hello World", force=True))

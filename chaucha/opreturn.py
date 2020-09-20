@@ -32,7 +32,7 @@ def __payload(string):
     return payload
 
 
-def send(privkey, pubkey, sendto, message=""):
+def send(privkey, pubkey, sendto, message="", force=False):
 
     op_return = message
 
@@ -40,20 +40,21 @@ def send(privkey, pubkey, sendto, message=""):
 
     confirmed_balance, inputs, unconfirmed = insight.getunspentbalance(addr)
 
-    if not crypto.pubkey_is_valid(addr):
-        # Invalid Address
-        print("Invalid Address")
-        return False
+    if not force:
+        if not crypto.pubkey_is_valid(addr):
+            # Invalid Address
+            # print("Invalid Address")
+            return False
 
-    elif constants.FEE_MINIMUM > confirmed_balance:
-        # Not enough chauchas
-        print("No minimum fee")
-        return False
+        elif constants.FEE_MINIMUM > confirmed_balance:
+            # Not enough chauchas
+            # print("No minimum fee")
+            return False
 
-    elif len(op_return) > MAX:
-        # Message too long
-        print("Message to long")
-        return False
+        elif len(op_return) > MAX:
+            # Message too long
+            # print("Message to long")
+            return False
 
     # Transformar valores a Chatoshis
     used_amount = int(constants.FEE_MINIMUM * constants.COIN)
