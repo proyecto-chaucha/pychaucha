@@ -5,13 +5,16 @@ name = "pypi"
 
 [packages]
 bitcoin = "*"
+requests = "*"
 
 [dev-packages]
-"flake8" = "*"
-"flake8-import-order" = "*"
-the = "*"
-mypy = "*"
-green = "*"
+"black" = "*"
+"pytest" = "*"
+"pytest-black" = "*"
+"python-dotenv" = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true

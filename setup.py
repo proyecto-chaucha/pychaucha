@@ -10,15 +10,13 @@ setup(
     name=name,
     version=version,
     packages=find_packages(),
-    license='MIT',
-    author='Camilo Castro',
-    author_email='camilo@chaucha.cl',
-    description='Provides helper functions to Chaucha',
-    url='https://github.com/proyecto-chaucha/pychaucha',
-    install_requires=[
-        'bitcoin'
-    ],
-    keywords=['chaucha', 'python3', 'bitcoin', 'cryptocurrency', 'blockchain'],
+    license="MIT",
+    author="Camilo Castro",
+    author_email="camilo@ninjas.cl",
+    description="Provides helper functions to Chaucha",
+    url="https://github.com/proyecto-chaucha/pychaucha",
+    install_requires=["bitcoin", "requests"],
+    keywords=["chaucha", "python3", "bitcoin", "cryptocurrency", "blockchain"],
     include_package_data=True,
     classifiers=(
         "Programming Language :: Python :: 3",

@@ -3,9 +3,16 @@
 """
 Chaucha python tools
 """
+from dotenv import load_dotenv
+from chaucha import opreturn
+from os import getenv
 
-from chaucha.address import Address
+load_dotenv()
 
-if __name__ == '__main__':
-    address = Address.init_random()
-    print('Private %s\nPublic %s' % (address.private.key, address.public.key))
+if __name__ == "__main__":
+
+    privkey = getenv("PRIVATE_KEY")
+    pubkey = getenv("PUBLIC_KEY")
+    sendto = getenv("SEND_TO_PUBLIC_KEY")
+
+    print(opreturn.send(privkey, pubkey, sendto, message="Hola Mundo, Hello World"))
