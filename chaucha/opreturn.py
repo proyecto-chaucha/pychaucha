@@ -74,7 +74,7 @@ def send(privkey, pubkey, sendto, message=""):
     # OP_RETURN
     if len(op_return) > 0 and len(op_return) <= MAX:
         payload = __payload(op_return)
-        script = "6a" + b2a_hex(payload).decode("utf-8", errors="ignore")
+        script = constants.OP_RETURN + b2a_hex(payload).decode("utf-8", errors="ignore")
 
         outputs.append({"value": 0, "script": script})
 
